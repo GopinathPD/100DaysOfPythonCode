@@ -1,4 +1,4 @@
-#Number Guessing Game Objectives:
+# Number Guessing Game Objectives:
 
 # Include an ASCII art logo.
 # Allow the player to submit a guess for a number between 1 and 100.
@@ -10,22 +10,22 @@
 import random
 from art import logo
 
-#Introduction messages
+# Introduction messages
 print(logo)
 print("Welcome to the Number Guessing Game!")
 print("I'm thinking of a number between 1 and 100.")
 difficulty_level = input("Choose a difficulty. Type 'easy' or 'hard': ")
-attemts_left = 0
-random_number = random.randint(1,100)
+attempts_left = 0
+random_number = random.randint(1, 100)
 if difficulty_level.lower() == 'easy':
-    attemts_left = 10
+    attempts_left = 10
 elif difficulty_level.lower() == 'hard':
-    attemts_left = 5
+    attempts_left = 5
 else:
     print("That's not a valid option..!!/n Please try again..!!")
 
-while attemts_left > 0:
-    print(f"You have {attemts_left} attempts remaining to guess")
+while attempts_left > 0:
+    print(f"You have {attempts_left} attempts remaining to guess")
     guess = int(input("Make a guess: "))
     if guess == random_number:
         print(f"You got it! The answer was {random_number}")
@@ -35,9 +35,8 @@ while attemts_left > 0:
     elif guess < random_number:
         print("Too low.")
 
-    attemts_left -= 1
-    if attemts_left == 0:
+    attempts_left -= 1
+    if attempts_left == 0:
         print("You've run out of guesses, you lose.")
     else:
         print("Guess again.")
-
