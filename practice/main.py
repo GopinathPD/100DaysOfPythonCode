@@ -79,18 +79,27 @@ def change_direction():
 #     change_color()
 #     change_direction()
 
-# Draw a spirograph
-turtle.speed(0)
-draw_circle = True
-size = 0
+# # Draw a spirograph
+# turtle.speed(0)
+# draw_circle = True
+# size = 0
+#
+# while draw_circle:
+#     turtle.circle(100)
+#     size += 5
+#     turtle.setheading(size)
+#     change_color()
+#     print(turtle.heading())
+#     if turtle.heading() == 0.0:
+#         draw_circle = False
 
-while draw_circle:
-    turtle.circle(100)
-    size += 5
-    turtle.setheading(size)
-    change_color()
-    print(turtle.heading())
-    if turtle.heading() == 0.0:
-        draw_circle = False
+# move the cursor/marker
+def move_forwards():
+    turtle.forward(10)
+
+
+# Screen Listen Methods
+screen.listen()
+screen.onkey(key="space", fun=move_forwards)
 
 screen.exitonclick()
